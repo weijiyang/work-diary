@@ -1,0 +1,33 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+.box{
+	display:flex;
+	display:-webkit-flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+.box li{
+	width:10%;
+	padding-bottom:10%;
+	height:0;
+	box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	color:white;
+	font-size:20px;
+	text-align:center;
+
+}
+li:nth-of-type(even){
+	background:red;
+}
+li:nth-of-type(odd){
+	background:blue;
+}
