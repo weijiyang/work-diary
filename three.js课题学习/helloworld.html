@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>hello world</title>
+	<script type="text/javascript" src="three.js"></script>
+</head>
+<body>
+	<canvas id="mainCanvas" width="500" height="500"></canvas>
+</body>
+<script>
+	window.onload = function(){
+		//典型的Three.js程序至少要包括 renderer(渲染器)、scene(场景)、camera(照相机)、创建的物体
+
+		//定义渲染器 绑定定义的canvas元素
+		var renderer = new THREE.WebGLRenderer({
+			canvas : document.getElementById("mainCanvas")
+		});
+		renderer.setClearColor(0x000000)//清楚画面颜色
+
+		//或者直接创建canvas元素
+		// var anotherRenderer = new THREE.WebGLRenderer();
+		// anotherRenderer.setSize(500,500);
+		// document.getElementsByTagName('body')[0].appendChild(anotherRenderer.domElement);
+		// anotherRenderer.setClearColor(0x000000)//清楚画面颜色
+
+
+
+		//场景
+
+		var scene = new THREE.Scene();
+
+		//定义投影照相机
+		var camera = new THREE.PerspectiveCamera( 45 , 4/3 , 1 , 1000);
+		camera.position.set(0 , 0 , 5);
+		scene.add(camera);//需要添加！！！
+
+
+		//长方形
+		var cube = new THREE.Mesh(
+			new THREE.CubeGeometry(1 , 2 , 3),
+			new THREE.MeshBasicMaterial({
+				color:0xff0000
+			})
+		);
+		scene.add(cube);
+
+
+
+
+		//渲染
+		renderer.render(scene , camera);
+	}
+</script>
+</html>

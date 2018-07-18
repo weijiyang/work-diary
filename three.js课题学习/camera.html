@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>camera</title>
+	<script type="text/javascript" src="three.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	window.onload = function(){
+		var render = new THREE.WebGLRenderer();
+		render.setSize(500 , 500);
+		document.getElementsByTagName("body")[0].appendChild(render.domElement);
+
+		var scene = new THREE.Scene();
+
+
+
+		//照相机的视角向右上移动 物体左下移动
+		// // var camera = new THREE.OrthographicCamera(-2 , 2 ,2 ,-2,1, 10);//左右上下前后
+		// var camera = new THREE.OrthographicCamera(-1 , 2 ,2 ,-1,1, 10);
+		// camera.position.set(0,0,5);
+
+
+
+
+		//思考 以下两种情况为什么相同(  自己比作相机    笔记本比作长方形 )
+		var camera = new THREE.OrthographicCamera(-2 , 2 ,2 ,-2,1, 10);
+		camera.position.set(1,0,5);
+
+		// var camera = new THREE.OrthographicCamera(-1,3,2,-2,1,10);
+		// camera.position.set(0 ,0,5)
+
+
+
+
+
+
+
+
+
+		scene.add(camera);
+
+		var cube = new THREE.Mesh(
+			new THREE.CubeGeometry(1,1,1),
+			new THREE.MeshBasicMaterial({
+				color:0xff0000,
+				wireframe:true
+			})
+		);
+		scene.add(cube);
+		render.render(scene,camera);
+	}
+</script>
+</html>
