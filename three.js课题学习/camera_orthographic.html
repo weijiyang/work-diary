@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>camera</title>
+	<title>camera_orthographic</title>
 	<script type="text/javascript" src="three.js"></script>
 </head>
 <body>
@@ -26,15 +26,18 @@
 
 
 		//思考 以下两种情况为什么相同(  自己比作相机    笔记本比作长方形 )
-		var camera = new THREE.OrthographicCamera(-2 , 2 ,2 ,-2,1, 10);
-		camera.position.set(1,0,5);
+		// var camera = new THREE.OrthographicCamera(-2 , 2 ,2 ,-2,1, 10);
+		// camera.position.set(1,0,5);
 
 		// var camera = new THREE.OrthographicCamera(-1,3,2,-2,1,10);
 		// camera.position.set(0 ,0,5)
 
 
 
-
+		// 俯视长方体
+		var camera = new THREE.OrthographicCamera(-3,3,-3,3,1,10);
+		camera.position.set(4,3,5);
+		camera.lookAt(new THREE.Vector3(0,0,0));
 
 
 
