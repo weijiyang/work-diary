@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas - rect</title>
+	<style>
+		canvas{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<!-- canvas默认宽高300px 150px、css属性同样可以更改宽高但如果和初始化宽高比不统一会出现变形的问题 建议不要使用css定宽高！！！-->
+	<canvas width="300" height="150">
+		不支持canvas标签会显示该内容~
+	</canvas>
+</body>
+<script>
+	//canvas标签需要考虑浏览器版本兼容性、同样其对应的方法也应该考虑不支持的处理方式！！！
+	var canvas = document.getElementById("target");
+	if( canvas.getContext ){
+		var ctx = canvas.getContext("2d");
+	}else{
+		alert("该浏览器版本过低，请更换~")
+	}
+</script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas - getContext</title>
+</head>
+<body>
+	<canvas id="target">
+		该浏览器不支持canvas~
+	</canvas>
+</body>
+<script>
+	//canvas标签需要考虑浏览器版本兼容性、同样其对应的方法也应该考虑不支持的处理方式！！！
+	var canvas = document.getElementById("target");
+	if( canvas.getContext ){
+		var ctx = canvas.getContext("2d");
+	}else{
+		alert("该浏览器版本过低，请更换~")
+	}
+</script>
+</html>
