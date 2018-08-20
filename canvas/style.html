@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas - style</title>
+	<style>
+		canvas{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="600" id="target"></canvas>
+</body>
+<script>
+//为了方便对于各方法的讲解 、 将弱化对标签和方法的支持性提示 但是这是必要的！！！
+	function draw(){
+		var canvas = document.getElementById("target");
+		if(!canvas.getContext) return;
+		var ctx = canvas.getContext("2d");
+		
+		ctx.beginPath();
+
+		ctx.fillStyle="red";
+		ctx.strokeStyle = "blue"; 
+		ctx.fillRect(100 ,100 ,100,100);
+		ctx.strokeRect(400,400,100,100);
+		ctx.closePath();
+
+
+
+		ctx.beginPath();
+		var gradient = ctx.createLinearGradient(200, 400, 200, 500); 
+		gradient.addColorStop(0, 'rgb(255,0,0)'); 
+		gradient.addColorStop(0.5, 'rgb(0,255,0)'); 
+		gradient.addColorStop(1, 'rgb(0,0,255)'); 
+		ctx.fillStyle=gradient;
+
+		ctx.arc(200,400,50,0,2*Math.PI,true);
+		
+		ctx.closePath();
+		
+		ctx.fill();
+		
+
+
+	}
+	draw();
+</script>
+</html>

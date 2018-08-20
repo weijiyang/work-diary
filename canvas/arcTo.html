@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>canvas - rect</title>
+	<title>canvas - arcTo</title>
 	<style>
 		canvas{
 			border: 1px solid black;
@@ -17,11 +17,31 @@
 		var canvas = document.getElementById("target");
 		if(!canvas.getContext) return;
 		var ctx = canvas.getContext("2d");
-		ctx.fillRect(10,10,20,20);//
-		ctx.strokeRect(40,40,20,20);
+		
+		ctx.beginPath();
+		ctx.moveTo( 100 , 100);
+		ctx.arcTo(200 , 100 , 200 , 200 , 80);
+		ctx.lineTo(200 , 200 );
+		ctx.closePath();
+		ctx.stroke();
 
-		ctx.fillRect(100,100,100,100);
-		ctx.clearRect(120,120,50,50);
+
+		//辅助理解
+		ctx.beginPath();
+		ctx.rect(100,100,5,5);
+		ctx.rect(200,100,5,5);
+		ctx.rect(200,200,5,5);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineTo(200,100);
+		ctx.lineTo(200,200);
+
+		ctx.strokeStyle="red";
+		ctx.stroke();
+
 	}
 	draw();
 </script>

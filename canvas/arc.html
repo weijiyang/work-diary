@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>canvas - rect</title>
+	<title>canvas - arc</title>
 	<style>
 		canvas{
 			border: 1px solid black;
@@ -17,11 +17,17 @@
 		var canvas = document.getElementById("target");
 		if(!canvas.getContext) return;
 		var ctx = canvas.getContext("2d");
-		ctx.fillRect(10,10,20,20);//
-		ctx.strokeRect(40,40,20,20);
+		
+		ctx.beginPath();
+		ctx.arc(200,200,100,0,Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
 
-		ctx.fillRect(100,100,100,100);
-		ctx.clearRect(120,120,50,50);
+		ctx.beginPath();
+		ctx.arc(400 , 400 , 100 , 0 , 2*Math.PI , true);
+		ctx.closePath();
+		ctx.fill();
+
 	}
 	draw();
 </script>

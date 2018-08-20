@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas - bezierCurveTo</title>
+	<style>
+		canvas{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="600" id="target"></canvas>
+</body>
+<script>
+//为了方便对于各方法的讲解 、 将弱化对标签和方法的支持性提示 但是这是必要的！！！
+	function draw(){
+		var canvas = document.getElementById("target");
+		if(!canvas.getContext) return;
+		var ctx = canvas.getContext("2d");
+		
+		ctx.beginPath();
+		ctx.moveTo(200 , 100);
+		ctx.bezierCurveTo( 260,260,350 , 350 , 400 , 100)
+		ctx.closePath();
+		ctx.stroke();
+
+
+		//辅助理解
+		ctx.beginPath();
+		ctx.rect(200 ,100 ,5 , 5);
+		ctx.rect(260,260,5,5);
+		ctx.rect(350,350,5,5);
+		ctx.rect(400,100,5,5);
+		ctx.closePath();
+		ctx.fill();
+
+
+		ctx.beginPath();
+		ctx.moveTo(200,100);
+		ctx.lineTo(260,260);
+		ctx.lineTo(350,350);
+		ctx.lineTo(400,100);
+		ctx.closePath();
+		ctx.strokeStyle = "red";
+		ctx.stroke();
+
+
+
+
+	}
+	draw();
+</script>
+</html>

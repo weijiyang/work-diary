@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>canvas - rect</title>
+	<title>canvas - createPattern</title>
 	<style>
 		canvas{
 			border: 1px solid black;
@@ -10,6 +10,7 @@
 </head>
 <body>
 	<canvas width="600" height="600" id="target"></canvas>
+	<img src="temp.png" alt="报错" width="200" height="200" id="pic"/>
 </body>
 <script>
 //为了方便对于各方法的讲解 、 将弱化对标签和方法的支持性提示 但是这是必要的！！！
@@ -17,11 +18,18 @@
 		var canvas = document.getElementById("target");
 		if(!canvas.getContext) return;
 		var ctx = canvas.getContext("2d");
-		ctx.fillRect(10,10,20,20);//
-		ctx.strokeRect(40,40,20,20);
+		
+		ctx.beginPath();
+		ctx.arc(300,300,100,0,2*Math.PI,true);
+		ctx.closePath();
 
-		ctx.fillRect(100,100,100,100);
-		ctx.clearRect(120,120,50,50);
+		var img = document.getElementById("pic");
+		var pattern = ctx.createPattern(img,"repeat");;
+		ctx.fillStyle = pattern;
+		ctx.fill();
+		
+
+
 	}
 	draw();
 </script>
