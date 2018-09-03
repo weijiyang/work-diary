@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>svg - stroke</title>
+		<style>
+			@keyframes spin{
+				0%{
+					stroke-dashoffet:313;
+					stroke-dasharray:0 313;
+				}
+				50%{
+					stroke-dashoffset:0;
+					stroke-dasharray:313 0;
+				}
+				100%{
+					stroke-dashoffset:-313;
+					stroke-dasharray:0 313;
+				}
+			}
+			@keyframes rinfiniteotate{
+				0%{
+					transform:rotate(0deg);
+				}
+				100%{
+					transform:rotate(360deg);
+				}
+			}
+			.progress circle{
+				fill:none;
+				stroke:slategray;
+				stroke-width:10;
+				stroke-linecap: round;
+				animation : spin 2s  linear;
+			}
+			.rect{
+				margin:0 auto;
+				margin-top:20px;
+				animation : rotate 2s infinite ease;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rect" style="background:red;width:100px;height:100px;">
+			
+		</div>
+		<svg class="progress" width="600" height="600" >
+			<circle cx="300" cy="300" r="50" transform="rotate(-90,300,300)">
+		</svg>
+		<script>
+			window.onload=function(){
+				var circle = document.querySelector(".progress circle");
+				console.log(circle.getTotalLength())
+			}
+		</script>
+	</body>
+</html>
