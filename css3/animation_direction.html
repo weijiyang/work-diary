@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 - direction</title>
+</head>
+<style>
+	.box{
+		width:50px;
+		height:50px;
+		border-radius:50px;
+		background:red;
+		position:relative;
+	}
+	.box1{
+		animation: goLeft 2s normal infinite ease;
+	}
+	.box2{
+		animation: goLeft 2s alternate infinite ease;
+	}
+	.box3{
+		animation: goLeft 2s alternate-reverse infinite ease;
+	}
+	.box4{
+		animation: goLeft 2s reverse infinite ease;
+	}
+	@keyframes goLeft{
+		0%{
+			left:40%;
+		}
+		
+		100%{
+			left:60%;
+		}
+	}
+
+</style>
+<body>
+	<p>
+		direction = normal <div class="box box1"></div></p>
+		direction = alternate <div class="box box2"></div></p>
+		irection = alternate-reverse <div class="box box3"></div></p>
+		irection = reverse <div class="box box4"></div></p>
+	</p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ANIMATION-play-state</title>
+	<style>
+		.box{
+			width:50px;
+			height:50px;
+			background:red;
+			position:absolute;
+			left:20%;
+			top:20%;
+			animation:move 5s normal infinite ease;
+		}
+		input{
+			position:absolute;
+			top:40%;
+			left:40%;
+		}
+		@keyframes move{
+			0%{
+				left:20%;
+				top:20%;
+			}
+			25%{
+				left:60%;
+				top:20%;
+			}
+			50%{
+				left:60%;
+				top:60%;
+			}
+			75%{
+				left:20%;
+				top:60%;
+			}
+			100%{
+				left:20%;
+				top:20%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<input type="button" value="点我" onclick="clickMe()"/>
+</body>
+<script>
+	function clickMe(){
+
+		var dom = document.querySelector(".box");
+		console.log(dom)
+		if(dom.style.animationPlayState == 'paused'){
+			dom.style.animationPlayState = 'running';
+		}else{
+			dom.style.animationPlayState = 'paused';
+		}
+	}
+</script>
+</html>

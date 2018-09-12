@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 - ANIMATION-delay</title>
+</head>
+<style>
+	.box{
+		width:50px;
+		height:50px;
+		border-radius:50px;
+		background:red;
+		position:relative;
+	}
+	.box1{
+		animation: goLeft 2s 1s alternate infinite ease;
+	}
+	.box2{
+		animation: goLeft 2s 1.2s alternate infinite ease;
+	}
+	.box3{
+		animation: goLeft 2s 1.4s alternate infinite ease;
+	}
+	.box4{
+		animation: goLeft 2s 1.6s alternate infinite ease;	
+	}
+	.box5{
+		animation: goLeft 2s 1.8s alternate infinite ease;
+	}
+	.box6{
+		animation: goLeft 2s -1s alternate infinite ease;
+	}
+	@keyframes goLeft{
+		0%{
+			left:40%;
+		}
+		
+		100%{
+			left:60%;
+		}
+	}
+
+</style>
+<body>
+	<p>
+		delay = 1s<div class="box box1"></div></p>
+		delay = 1.2s<div class="box box2"></div></p>
+		delay = 1.4s<div class="box box3"></div></p>
+		delay = 1.6s<div class="box box4"></div></p>
+		delay = 1.8s<div class="box box5"></div></p>
+		delay = -1s<div class="box box6"></div></p>
+	</p>
+</body>
+</html>

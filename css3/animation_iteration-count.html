@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 - iteration-count</title>
+</head>
+<style>
+	.box{
+		width:50px;
+		height:50px;
+		border-radius:50px;
+		background:red;
+		position:relative;
+	}
+	.box1{
+		animation: goLeft 2s alternate 1 ease;
+	}
+	.box2{
+		animation: goLeft 2s alternate 2 ease;
+	}
+	.box3{
+		animation: goLeft 2s alternate 3 ease;
+	}
+	.box4{
+		animation: goLeft 2s alternate 4 ease;	
+	}
+	.box5{
+		animation: goLeft 2s alternate infinite ease;
+	}
+	@keyframes goLeft{
+		0%{
+			left:40%;
+		}
+		
+		100%{
+			left:60%;
+		}
+	}
+
+</style>
+<body>
+	<p>
+		iteration-count = 1 <div class="box box1"></div></p>
+		iteration-count = 2 <div class="box box2"></div></p>
+		iteration-count = 3 <div class="box box3"></div></p>
+		iteration-count = 4 <div class="box box4"></div></p>
+		iteration-count = infinite <div class="box box5"></div></p>
+	</p>
+</body>
+</html>

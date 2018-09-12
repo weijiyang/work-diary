@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 - ANIMATION-time-function</title>
+</head>
+<style>
+	.box{
+		width:50px;
+		height:50px;
+		background:red;
+		position:relative;
+	}
+	.box1{
+		animation: goLeft 2s alternate infinite linear;
+	}
+	.box2{
+		animation: goLeft 2s alternate infinite ease;
+	}
+	.box3{
+		animation: goLeft 2s alternate infinite ease-in;
+	}
+	.box4{
+		animation: goLeft 2s alternate infinite ease-out;	
+	}
+	.box5{
+		animation: goLeft 2s alternate infinite ease-in-out;
+	}
+	.box6{
+		animation : goLeft 2s alternate infinite cubic-bezier(0,0,0.3,1);
+	}
+	@keyframes goLeft{
+		from{
+			left:20%;
+		}
+		to{
+			left:60%;
+		}
+	}
+
+</style>
+<body>
+	<p>
+		linear 匀速 <div class="box box1"></div></p>
+		ease 慢->快->慢 <div class="box box2"></div></p>
+		ease-in 慢->快 <div class="box box3"></div></p>
+		ease-out 快->慢 <div class="box box4"></div></p>
+		ease-in-out 慢->快->慢 <div class="box box5"></div></p>
+		cubic-bezier 自定义<div class="box box6"></div></p>
+	</p>
+</body>
+</html>
