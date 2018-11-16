@@ -64,15 +64,15 @@ arcTo( x1 , y1 , x2 , y2 , radius ) //根据 两个控制点 (x1,y1) 和 (x2, y2
 ​一次贝塞尔曲线其实是一条直线
 
 ![canvas5](https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas5.gif)
-<iframe height=500 width=500 src="https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas5.gif">
+
 二次贝塞尔曲线
 
 ![canvas6](https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas6.gif)
-<iframe height=500 width=500 src="https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas6.gif">
+
 三次贝塞尔曲线
 
 ![canvas7](https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas7.gif)
-<iframe height=500 width=500 src="https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas7.gif">
+
 
 二次贝塞尔曲线
 
