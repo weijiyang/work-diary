@@ -337,6 +337,9 @@ save&restore 保存恢复canvas状态
 #### 英文在线工具网址：https://editor.method.ac/
 #### 中文在线网址：https://c.runoob.com/more/svgeditor/
 
+# canvas & svg 性能
+
+![canvas24](https://img-oss.yunshanmeicai.com/weixin/mall/cdn/meicai_blog/weapp/images/canvas24.png)
 
 #### 相关链接：
 * https://blog.csdn.net/u012468376/article/details/73350998
